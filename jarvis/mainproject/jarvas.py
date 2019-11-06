@@ -14,31 +14,31 @@ voices = engine.getProperty('voices')
 engine.setProperty('voice',voices[0].id)
 
 def command():
-	# r = sr.Recognizer()
-	# with sr.Microphone() as source:
-	# 	print("Speak now....")
-	# 	audio = r.listen(source)
-	# 	r.pause_threshold = .5
-	# 	# r.energy_threshold = 400
-	# 	try:
-	# 		print("Recogizing.....")
-	# 		query = r.recognize_google(audio,language = 'en-in')
-	# 	except:
-	# 		print("sorry")
-	# 		return "none"
-	return "translate i love you"
+	r = sr.Recognizer()
+	with sr.Microphone() as source:
+		print("Speak now....")
+		audio = r.listen(source)
+		r.pause_threshold = .5
+		# r.energy_threshold = 400
+		try:
+			print("Recogizing.....")
+			query = r.recognize_google(audio,language = 'en-in')
+		except:
+			print("sorry")
+			return "none"
+	return query
 
 def name():
-	# r = sr.Recognizer()
-	# with sr.Microphone() as source:
-	# 	audio = r.listen(source)
-	# 	r.pause_threshold = .10
-	# 	# r.energy_threshold = 400
-	# 	try:
-	# 		name = r.recognize_google(audio,language = 'en-in')
-	# 	except:
-			# return "none"
-	return ("hello")
+	r = sr.Recognizer()
+	with sr.Microphone() as source:
+		audio = r.listen(source)
+		r.pause_threshold = .10
+		# r.energy_threshold = 400
+		try:
+			name = r.recognize_google(audio,language = 'en-in')
+		except:
+			return "none"
+	return query
 	#return query
 
 def speak(audio):
